@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="resumenHistoriaClinica" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2b9740b2-4606-4ba3-b2b6-6d5d51ec93b9">
+	<property name="com.jaspersoft.studio.data.sql.tables">
+		<![CDATA[cGFjaWVudGUgLDE1LDE1LDE0Zjg4YWNmLTNiZjItNDc0MC1hYzkwLWVkZGIyOGRhOTFkODs=
+]]>
+	</property>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="traumatologiaDrGalarza"/>
+	<parameter name="nombrePaciente" class="java.lang.String"/>
+	<parameter name="cedulaPaciente" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT *
+FROM paciente
+WHERE 
+	 paciente.nombre_paciente LIKE $P{nombrePaciente}]]>
+	</queryString>
+	<field name="cedula" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cedula"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+	</field>
+	<field name="nombre_paciente" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nombre_paciente"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+	</field>
+	<field name="sexo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="sexo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+	</field>
+	<field name="reside" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="reside"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+	</field>
+	<field name="estado_civil" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="estado_civil"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+	</field>
+	<field name="ocupacion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ocupacion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+	</field>
+	<field name="edad" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="edad"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+	</field>
+	<field name="fecha" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="fecha"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+	</field>
+	<field name="telefono" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="telefono"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="88" splitType="Stretch">
+			<staticText>
+				<reportElement x="150" y="10" width="300" height="30" forecolor="#253BB8" uuid="9afd64d6-b633-43db-97d7-877d771bb794"/>
+				<textElement>
+					<font fontName="Arial Black" size="16"/>
+				</textElement>
+				<text><![CDATA[TRAUMATOLOGIA Y ORTOPEDIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="30" width="210" height="30" forecolor="#253BB8" uuid="59627f0e-8552-44d4-8590-6371e27d8963"/>
+				<textElement>
+					<font fontName="Arial Black" size="16"/>
+				</textElement>
+				<text><![CDATA[DR. SAMUEL GALARZA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="50" width="130" height="30" forecolor="#253BB8" uuid="fdb6fa4c-4590-4d1e-a3eb-8361693f130c"/>
+				<textElement>
+					<font fontName="Arial Black" size="16"/>
+				</textElement>
+				<text><![CDATA[Traumatólogo]]></text>
+			</staticText>
+			<image>
+				<reportElement x="30" y="0" width="110" height="80" uuid="40effe2e-7a94-4f66-89c6-0685b85c3891"/>
+				<imageExpression><![CDATA["Traumatologia.PNG"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement positionType="Float" x="390" y="-10" width="100" height="30" uuid="e3d378a3-c8aa-40ff-ae52-726d36b5a18f"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="490" y="-10" width="100" height="30" uuid="b5a5eb30-c707-4293-a2b4-45347702bd34"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[" of " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="115" splitType="Stretch">
+			<textField>
+				<reportElement x="70" y="40" width="100" height="30" uuid="c39df319-364b-4823-ae4c-8e83dbec9192"/>
+				<textFieldExpression><![CDATA[$F{nombre_paciente}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="-20" width="550" height="30" uuid="15882ae3-4716-4de6-8e1c-683fbd2ca20c"/>
+				<text><![CDATA[__________________________________________________________________________________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="40" width="100" height="30" uuid="6e836694-61a8-42ed-8909-86b38a61ee9c"/>
+				<text><![CDATA[Paciente:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="10" width="230" height="20" uuid="e4e3d184-0f62-4336-a50a-50f58f2fc476"/>
+				<textElement>
+					<font fontName="Arial Black" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RESUMEN HISTORIA CLINICA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="320" y="44" width="100" height="30" uuid="1b78289f-d7fc-4474-8b2c-a1c175dcbf45"/>
+				<text><![CDATA[C.C:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="350" y="44" width="100" height="30" uuid="6113361d-5389-4a60-b75f-a63bb414d96d"/>
+				<textFieldExpression><![CDATA[$F{cedula}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="110" y="74" width="230" height="16" uuid="b58c8fea-0c21-4db1-ba96-1c2f41bc997c"/>
+				<text><![CDATA[FECHA EMISION RESUMEN HISTORIA CLINICA:]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="350" y="73" width="100" height="19" uuid="5ae7938e-2bbf-4232-94ea-28ae23434a15"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="460" y="30" width="100" height="30" uuid="795e4d35-bc40-47f2-ba5b-872f70884a80"/>
+				<text><![CDATA[11]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="100" width="121" height="15" uuid="d2488c33-3c39-47b6-a5c9-99d55177c16c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHAS DE ATENCIÓN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="100" width="137" height="13" uuid="f1d87734-9d9a-48c9-bdc7-cc81bd9c8ff0"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[MOTIVOS DE CONSULTAS]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="323" splitType="Stretch">
+			<subreport>
+				<reportElement x="-20" y="0" width="595" height="323" uuid="053bcb8e-90f1-4436-89be-38ad55a91643"/>
+				<subreportParameter name="cedulaPacienteSubReporte">
+					<subreportParameterExpression><![CDATA[$P{cedulaPaciente}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["subReportResumenHistoriaClinica.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

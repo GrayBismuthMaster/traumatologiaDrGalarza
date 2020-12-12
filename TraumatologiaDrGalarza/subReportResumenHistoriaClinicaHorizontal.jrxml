@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="subReportResumenHistoriaClinicaHorizontal" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7adcf318-4103-4016-9952-ba428d2523dc">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="traumatologiaDrGalarza"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="cedulaPacienteSubReporte" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT * FROM consulta WHERE cedula_paciente LIKE $P{cedulaPacienteSubReporte}]]>
+	</queryString>
+	<field name="id_consulta" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id_consulta"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="consulta"/>
+	</field>
+	<field name="mot_consulta" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="mot_consulta"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="consulta"/>
+	</field>
+	<field name="exa_fisico" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="exa_fisico"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="consulta"/>
+	</field>
+	<field name="examenes" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="examenes"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="consulta"/>
+	</field>
+	<field name="tra_ind" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tra_ind"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="consulta"/>
+	</field>
+	<field name="diagnostico" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="diagnostico"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="consulta"/>
+	</field>
+	<field name="dias_reposo" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="dias_reposo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="consulta"/>
+	</field>
+	<field name="fecha_consulta" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="fecha_consulta"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="consulta"/>
+	</field>
+	<field name="cedula_paciente" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cedula_paciente"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="consulta"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="21" uuid="2474989c-2ffc-42bc-bd94-8a5319efdabf"/>
+				<textFieldExpression><![CDATA[$F{fecha_consulta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="0" width="140" height="21" uuid="a5d8fc83-26a8-4a70-8025-07754c592963"/>
+				<textFieldExpression><![CDATA[$F{mot_consulta}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="resumenHistoriaClinicaHorizontal" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b17893b8-14d6-4a5f-aa2c-5a3974530eb3">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="traumatologiaDrGalarza"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="nombrePaciente" class="java.lang.String"/>
+	<parameter name="cedulaPaciente" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT *
+FROM paciente
+WHERE 
+	 paciente.nombre_paciente LIKE $P{nombrePaciente}]]>
+	</queryString>
+	<field name="cedula" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cedula"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+	</field>
+	<field name="nombre_paciente" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nombre_paciente"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+	</field>
+	<field name="sexo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="sexo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+	</field>
+	<field name="reside" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="reside"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+	</field>
+	<field name="estado_civil" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="estado_civil"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+	</field>
+	<field name="ocupacion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ocupacion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+	</field>
+	<field name="edad" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="edad"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+	</field>
+	<field name="fecha" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="fecha"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+	</field>
+	<field name="telefono" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="telefono"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="555" splitType="Stretch">
+			<staticText>
+				<reportElement x="260" y="10" width="300" height="30" forecolor="#253BB8" uuid="bc0a4ab1-2de7-4054-a233-7d832c01c256"/>
+				<textElement>
+					<font fontName="Arial Black" size="16"/>
+				</textElement>
+				<text><![CDATA[TRAUMATOLOGIA Y ORTOPEDIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="305" y="30" width="210" height="30" forecolor="#253BB8" uuid="69deefb3-510a-4025-9ed9-ef5acffb24b6"/>
+				<textElement>
+					<font fontName="Arial Black" size="16"/>
+				</textElement>
+				<text><![CDATA[DR. SAMUEL GALARZA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="336" y="50" width="130" height="30" forecolor="#253BB8" uuid="e0cc5dbf-00af-4fda-a6eb-b6e4a3341747"/>
+				<textElement>
+					<font fontName="Arial Black" size="16"/>
+				</textElement>
+				<text><![CDATA[Traumatólogo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="80" width="800" height="30" uuid="56b72a41-059b-41f1-b114-7f8f68ecd59d"/>
+				<text><![CDATA[_______________________________________________________________________________________________________________________________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="295" y="100" width="230" height="20" uuid="3f0abe7c-1090-456d-9ba6-d47a08594f17"/>
+				<textElement>
+					<font fontName="Arial Black" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RESUMEN HISTORIA CLINICA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="171" width="60" height="15" uuid="3edcd165-8fd3-4b81-824c-597dd1ff5bf4"/>
+				<textElement>
+					<font fontName="Arial Black" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHAS DE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="184" width="151" height="13" uuid="7e0b2f11-b5cf-4256-9598-a10597556a83"/>
+				<textElement>
+					<font fontName="Arial Black" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MOTIVOS DE CONSULTAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="600" y="121" width="100" height="30" uuid="81de0ae1-aa0e-4c8b-8b26-0d98ddf25048"/>
+				<text><![CDATA[C.C:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="630" y="122" width="100" height="30" uuid="82664d95-71e3-4ce5-af4d-62024ae39369"/>
+				<textFieldExpression><![CDATA[$F{cedula}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="630" y="150" width="100" height="30" uuid="073bd002-4880-410a-8c43-c4a8726871bc"/>
+				<text><![CDATA[37]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="120" width="100" height="18" uuid="668b3ee7-97fc-482e-975c-016c6da8666e"/>
+				<text><![CDATA[Paciente:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="70" y="120" width="100" height="20" uuid="3336ad16-61ac-4cae-a51e-690bbdac1495"/>
+				<textFieldExpression><![CDATA[$F{nombre_paciente}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="200" y="150" width="230" height="16" uuid="cde8b3cb-8feb-4810-836f-22756ba47884"/>
+				<text><![CDATA[FECHA EMISION RESUMEN HISTORIA CLINICA:]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="430" y="149" width="100" height="19" uuid="108e564c-5c2c-47f3-8b12-47db3226bd10"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="5" y="190" width="800" height="365" uuid="68893692-eaa8-4dca-aaa4-426da3f48e85"/>
+				<subreportParameter name="cedulaPacienteSubReporte">
+					<subreportParameterExpression><![CDATA[$P{cedulaPaciente}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["subReportResumenHistoriaClinicaHorizontal.jasper"]]></subreportExpression>
+			</subreport>
+			<image>
+				<reportElement x="150" y="5" width="70" height="80" uuid="2641ac0f-b72f-4455-b3ce-9b13a958726f"/>
+				<imageExpression><![CDATA["TraumatologiaLogo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="226" y="171" width="69" height="13" uuid="733a235f-992b-4dc7-b587-fb4b55917182"/>
+				<textElement>
+					<font fontName="Arial Black" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EXAMENES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="337" y="185" width="83" height="13" uuid="07039bc4-08c3-474d-bded-66ac71807b15"/>
+				<textElement>
+					<font fontName="Arial Black" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DIAGNÓSTICOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="550" y="184" width="80" height="13" uuid="db68ef2d-65b2-489c-87de-d8029bf3eb1d"/>
+				<textElement>
+					<font fontName="Arial Black" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TRATAMIENTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="514" width="124" height="20" uuid="6b65755d-5740-46f6-a007-3b4abef0ca26"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DR. SAMUEL GALARZA S.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="525" width="172" height="20" uuid="df6de893-081e-4022-add7-c3a36c2693fd"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TRAUMATOLOGO-ORTOPEDISTA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="536" width="162" height="19" uuid="472efaf6-7fb3-41ca-be29-cc73f8c3f300"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[R.M.S: Libro I. "I" Folio 12 No. 33]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="502" width="800" height="30" uuid="2b17301b-8b4a-43db-8e19-4c2becee702b"/>
+				<text><![CDATA[_______________________________________________________________________________________________________________________________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="720" y="171" width="60" height="13" uuid="7d14e35d-7633-4a24-94af-9ff7b78a9389"/>
+				<textElement>
+					<font fontName="Arial Black" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PROXIMA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="476" y="513" width="330" height="20" uuid="702b0b12-66be-4b59-b82e-9824e2598e5e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fracturas, luxaciones, esguinces, tendinitis, columna, esteoporosis]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="542" y="523" width="198" height="23" uuid="91a2b946-3f58-4dd8-92b9-08320f0fd778"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Prótesis de cadera y rodilla, artroscopía.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="420" y="534" width="380" height="14" uuid="d563ddf4-e56e-41d1-8872-ffb50d732bba"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dirección: Quito, Yaruquí, calles: Mejía y Amazonas Telf:0995647253/022778800]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="510" y="184" width="40" height="13" uuid="083c0cec-7e60-42aa-b17c-91f477598db1"/>
+				<textElement>
+					<font fontName="Arial Black" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CIE10]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="226" y="184" width="70" height="13" uuid="61688bf3-679e-426d-a580-e5abb93b83c7"/>
+				<textElement>
+					<font fontName="Arial Black" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REALIZADOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="185" width="66" height="15" uuid="7623ac96-074f-4be4-8f64-85d2e4880913"/>
+				<textElement>
+					<font fontName="Arial Black" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ATENCIÓN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="720" y="185" width="60" height="13" uuid="69e98e00-4e5f-4038-8ed8-333964da897d"/>
+				<textElement>
+					<font fontName="Arial Black" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CONSULTA]]></text>
+			</staticText>
+		</band>
+	</title>
+</jasperReport>

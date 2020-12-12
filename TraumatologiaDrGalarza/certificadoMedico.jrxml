@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="resumenHistoriaClinica" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2b9740b2-4606-4ba3-b2b6-6d5d51ec93b9">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="traumatologiaDrGalarza"/>
+	<parameter name="nombrePaciente" class="java.lang.String"/>
+	<parameter name="cedulaPaciente" class="java.lang.String"/>
+	<parameter name="fechaFinReposo" class="java.lang.String"/>
+	<parameter name="fechaFinReposoTexto" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT *
+FROM paciente
+WHERE 
+	 paciente.nombre_paciente LIKE $P{nombrePaciente}]]>
+	</queryString>
+	<field name="cedula" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cedula"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+	</field>
+	<field name="nombre_paciente" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nombre_paciente"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+	</field>
+	<field name="sexo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="sexo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+	</field>
+	<field name="reside" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="reside"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+	</field>
+	<field name="estado_civil" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="estado_civil"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+	</field>
+	<field name="ocupacion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ocupacion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+	</field>
+	<field name="edad" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="edad"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+	</field>
+	<field name="fecha" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="fecha"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+	</field>
+	<field name="telefono" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="telefono"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="88" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="10" width="550" height="30" forecolor="#253BB8" uuid="9afd64d6-b633-43db-97d7-877d771bb794"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Black" size="16"/>
+				</textElement>
+				<text><![CDATA[TRAUMATOLOGIA Y ORTOPEDIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="30" width="550" height="30" forecolor="#253BB8" uuid="59627f0e-8552-44d4-8590-6371e27d8963"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Black" size="16"/>
+				</textElement>
+				<text><![CDATA[DR. SAMUEL GALARZA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="50" width="550" height="30" forecolor="#253BB8" uuid="fdb6fa4c-4590-4d1e-a3eb-8361693f130c"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Black" size="16"/>
+				</textElement>
+				<text><![CDATA[Traumatólogo]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="390" y="-10" width="100" height="30" uuid="e3d378a3-c8aa-40ff-ae52-726d36b5a18f"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Página " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="490" y="-10" width="100" height="30" uuid="b5a5eb30-c707-4293-a2b4-45347702bd34"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[" of " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="50" y="10" width="70" height="70" uuid="ab6d75a6-eeff-4158-8632-075f6826aed7"/>
+				<imageExpression><![CDATA["TraumatologiaLogo.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="115" splitType="Stretch">
+			<textField>
+				<reportElement x="183" y="62" width="144" height="30" uuid="c39df319-364b-4823-ae4c-8e83dbec9192"/>
+				<textFieldExpression><![CDATA[$F{nombre_paciente}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="-20" width="550" height="30" uuid="15882ae3-4716-4de6-8e1c-683fbd2ca20c"/>
+				<text><![CDATA[__________________________________________________________________________________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="10" width="575" height="20" uuid="e4e3d184-0f62-4336-a50a-50f58f2fc476"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Black" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CERTIFICADO MEDICO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="184" y="88" width="140" height="16" uuid="6113361d-5389-4a60-b75f-a63bb414d96d"/>
+				<textFieldExpression><![CDATA[$F{cedula}]]></textFieldExpression>
+			</textField>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="50" y="36" width="100" height="19" uuid="5ae7938e-2bbf-4232-94ea-28ae23434a15"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="460" y="30" width="100" height="30" uuid="795e4d35-bc40-47f2-ba5b-872f70884a80"/>
+				<text><![CDATA[13]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="36" width="95" height="19" uuid="ff129875-0c71-48f4-bc5b-4c3ced1b35c0"/>
+				<text><![CDATA[Quito,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="62" width="130" height="18" uuid="dbe3445c-6466-4415-a865-65a36fd648c8"/>
+				<text><![CDATA[Certifico que el/la señor/a/ita:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="87" width="160" height="18" uuid="9d8497ef-6a9c-43fe-ae08-35fa50d2fefa"/>
+				<text><![CDATA[Con cédula de ciudadanía número:]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="310" splitType="Stretch">
+			<staticText>
+				<reportElement x="20" y="-2" width="160" height="18" uuid="a32062e1-43cd-4297-accf-60c391ee3b3d"/>
+				<text><![CDATA[Fue atendido/a por presentar]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="0" y="11" width="550" height="269" uuid="a175c9b9-9c32-4c93-a02d-fb1a113c272c"/>
+				<subreportParameter name="cedulaPacienteSubReporte">
+					<subreportParameterExpression><![CDATA[$P{cedulaPaciente}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="fechaFinReposoSubReporte">
+					<subreportParameterExpression><![CDATA[$P{fechaFinReposo}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="fechaFinReposoTextoSubReporte">
+					<subreportParameterExpression><![CDATA[$P{fechaFinReposoTexto}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["subCertificadoMedico.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement x="160" y="35" width="100" height="30" uuid="cf61a566-a0e3-43b9-a37c-d0015961f7be"/>
+				<text><![CDATA[DIAGNOSTICO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="440" y="35" width="50" height="30" uuid="d4c6d58f-f6e2-4699-b508-6176c6ee73c8"/>
+				<text><![CDATA[CIE10]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
