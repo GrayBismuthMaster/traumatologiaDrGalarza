@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="subCertificadoMedico" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5adb8658-8f05-442c-b67a-d24efa326656">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="traumatologiaDrGalarza"/>
+	<parameter name="cedulaPacienteSubReporte" class="java.lang.String"/>
+	<parameter name="fechaFinReposoSubReporte" class="java.lang.String">
+		<defaultValueExpression><![CDATA[$P{fechaFinReposoSubReporte}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fechaFinReposoTextoSubReporte" class="java.lang.String"/>
+	<parameter name="fechaInicioReposoSubReporte" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT id_consulta, diagnostico, cie10,dias_reposo,dias_reposo_texto FROM consulta where cedula_paciente like $P{cedulaPacienteSubReporte} ORDER by id_consulta DESC LIMIT 1]]>
+	</queryString>
+	<field name="id_consulta" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id_consulta"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="consulta"/>
+	</field>
+	<field name="diagnostico" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="diagnostico"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="consulta"/>
+	</field>
+	<field name="cie10" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cie10"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="consulta"/>
+	</field>
+	<field name="dias_reposo" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="dias_reposo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="consulta"/>
+	</field>
+	<field name="dias_reposo_texto" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dias_reposo_texto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="consulta"/>
+	</field>
+	<background>
+		<band height="449" splitType="Stretch">
+			<rectangle>
+				<reportElement x="4" y="0" width="518" height="90" uuid="b2e32efe-5d88-4c4d-91a9-3a598bd5fedc"/>
+			</rectangle>
+			<textField>
+				<reportElement x="22" y="25" width="310" height="60" uuid="e3734255-02d6-48ca-81d0-df228006081d"/>
+				<textFieldExpression><![CDATA[$F{diagnostico}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="423" y="25" width="80" height="60" uuid="63f1a3c7-f010-46d0-833c-cd4bc603c0a2"/>
+				<textFieldExpression><![CDATA[$F{cie10}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="103" width="347" height="30" uuid="c605391e-ba30-4b92-b089-065bcaccc4da"/>
+				<text><![CDATA[El/la señor/a/ita antes mencionado debe guardar reposo durante:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="35" y="129" width="311" height="21" uuid="246a90c0-c1ee-4cb9-9c79-91d52efbe154"/>
+				<text><![CDATA[día(s) (]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="83" y="129" width="160" height="21" uuid="c0eec6ba-d7dd-4ab6-bdf5-c563c8b003ba"/>
+				<text><![CDATA[)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="158" width="100" height="20" uuid="3f8fe128-d147-4df9-abe8-d88aed7295a3"/>
+				<text><![CDATA[Desde:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="214" width="100" height="30" uuid="ee120c01-de29-4dbe-9370-91c6b852ebdd"/>
+				<text><![CDATA[Hasta:]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="272" y="240" width="112" height="30" uuid="35b5308b-865e-486b-bc94-e1a70eb820f9"/>
+				<textFieldExpression><![CDATA[$P{fechaFinReposoSubReporte}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="129" width="100" height="30" uuid="5fbd4a82-e15f-4f46-b84e-966c45753774"/>
+				<textFieldExpression><![CDATA[$F{dias_reposo_texto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="72" y="129" width="100" height="30" uuid="3b3321d3-4dd1-4b78-a86c-c285b8761145"/>
+				<textFieldExpression><![CDATA[$F{dias_reposo}]]></textFieldExpression>
+			</textField>
+			<textField pattern="d-M-yyyy">
+				<reportElement x="270" y="185" width="100" height="30" uuid="92929763-63f5-4008-af06-69f33889f484"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="3" y="240" width="253" height="30" uuid="7c452ff8-b7e8-4948-8acd-dde499831cbb"/>
+				<textFieldExpression><![CDATA[$P{fechaFinReposoTextoSubReporte}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="4" y="266" width="100" height="20" uuid="e6e9f535-aabd-42d8-bc02-df3e9f4362cc"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ATENTAMENTE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="327" width="141" height="20" uuid="9905f42d-115c-4627-9a9d-054976deed89"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DR. SAMUEL GALARZA S.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="337" width="164" height="20" uuid="651cecac-6201-47c3-b3af-fcf22c2eab3a"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TRAUMATOLOGO-ORTOPEDISTA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="347" width="164" height="20" uuid="3c4e9afa-c721-4758-8fbd-0426711fec37"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[R.M.S Libro I. "I" Folio 12 No. 33]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-1" y="381" width="521" height="20" uuid="f2b4c791-99f7-4bb6-bfd6-de0362425474"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[_____________________________________________________________________________________________________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="393" width="520" height="20" uuid="4f0581a6-6bbe-4ad7-b6af-871005f14a6d"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fracturas, luxaciones, esguinces, tendinitis,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="403" width="520" height="20" uuid="90f56e43-b412-4919-b355-a48e7026755d"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Columna, osteoporosis,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="413" width="520" height="20" uuid="4c281b01-c716-4199-b51e-6a22d6205dc0"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Prótesis de cadera y rodilla, artroscopia.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="422" width="520" height="20" uuid="3bc5d952-25c2-47af-b783-20512554b93e"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dirección: Quito, Yaruquí, calles: Mejía y Amazonas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="432" width="520" height="16" uuid="8da59eb7-691a-4c00-b776-58e61f4a7c5d"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Telf:0995647253/022778800]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="2" y="184" width="254" height="30" uuid="ddfadef1-f7a0-471b-975e-05bb0f452b28"/>
+				<textFieldExpression><![CDATA[$P{fechaInicioReposoSubReporte}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="4" y="360" width="164" height="20" uuid="d9e44e53-a8e3-4eec-8253-dcad7e5b767d"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reg. Senescyt: 1031R-07-579]]></text>
+			</staticText>
+		</band>
+	</background>
+</jasperReport>

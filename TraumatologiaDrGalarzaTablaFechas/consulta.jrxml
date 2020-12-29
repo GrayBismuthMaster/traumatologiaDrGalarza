@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="resumenHistoriaClinicaHorizontal" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b17893b8-14d6-4a5f-aa2c-5a3974530eb3">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="traumatologiaDrGalarza"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="cedulaPaciente" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT *
+FROM consulta
+WHERE 
+	 cedula_paciente LIKE $P{cedulaPaciente} ORDER by fecha_consulta DESC LIMIT 1]]>
+	</queryString>
+	<field name="id_consulta" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id_consulta"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="consulta"/>
+	</field>
+	<field name="mot_consulta" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="mot_consulta"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="consulta"/>
+	</field>
+	<field name="exa_fisico" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="exa_fisico"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="consulta"/>
+	</field>
+	<field name="examenes" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="examenes"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="consulta"/>
+	</field>
+	<field name="tra_ind" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tra_ind"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="consulta"/>
+	</field>
+	<field name="diagnostico" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="diagnostico"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="consulta"/>
+	</field>
+	<field name="dias_reposo" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="dias_reposo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="consulta"/>
+	</field>
+	<field name="dias_reposo_texto" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dias_reposo_texto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="consulta"/>
+	</field>
+	<field name="fecha_consulta" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="fecha_consulta"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="consulta"/>
+	</field>
+	<field name="cedula_paciente" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cedula_paciente"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="consulta"/>
+	</field>
+	<field name="proxima_consulta" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="proxima_consulta"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="consulta"/>
+	</field>
+	<field name="cie10" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cie10"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="consulta"/>
+	</field>
+	<field name="rx" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="rx"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="consulta"/>
+	</field>
+	<field name="receta" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="receta"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="consulta"/>
+	</field>
+	<field name="indicaciones" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="indicaciones"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="consulta"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="555" splitType="Stretch">
+			<staticText>
+				<reportElement x="73" y="10" width="300" height="30" forecolor="#253BB8" uuid="bc0a4ab1-2de7-4054-a233-7d832c01c256"/>
+				<textElement>
+					<font fontName="Arial Black" size="16"/>
+				</textElement>
+				<text><![CDATA[TRAUMATOLOGIA Y ORTOPEDIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="118" y="30" width="210" height="30" forecolor="#253BB8" uuid="69deefb3-510a-4025-9ed9-ef5acffb24b6"/>
+				<textElement>
+					<font fontName="Arial Black" size="16"/>
+				</textElement>
+				<text><![CDATA[DR. SAMUEL GALARZA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="149" y="50" width="130" height="30" forecolor="#253BB8" uuid="e0cc5dbf-00af-4fda-a6eb-b6e4a3341747"/>
+				<textElement>
+					<font fontName="Arial Black" size="16"/>
+				</textElement>
+				<text><![CDATA[Traumatólogo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="80" width="372" height="30" uuid="56b72a41-059b-41f1-b114-7f8f68ecd59d"/>
+				<text><![CDATA[__________________________________________________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="126" width="75" height="20" uuid="3f0abe7c-1090-456d-9ba6-d47a08594f17"/>
+				<textElement>
+					<font fontName="Arial Black" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RECETA]]></text>
+			</staticText>
+			<image>
+				<reportElement x="4" y="5" width="70" height="80" uuid="2641ac0f-b72f-4455-b3ce-9b13a958726f"/>
+				<imageExpression><![CDATA["TraumatologiaLogo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="3" y="541" width="145" height="14" uuid="d563ddf4-e56e-41d1-8872-ffb50d732bba"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Telf:0998332212/022778800]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="491" y="10" width="300" height="30" forecolor="#253BB8" uuid="9d9b2c8d-b335-4b6c-8c06-d684df57c91c"/>
+				<textElement>
+					<font fontName="Arial Black" size="16"/>
+				</textElement>
+				<text><![CDATA[TRAUMATOLOGIA Y ORTOPEDIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="536" y="30" width="210" height="30" forecolor="#253BB8" uuid="ebe44507-4ad9-45f3-8f65-a05f95f94710"/>
+				<textElement>
+					<font fontName="Arial Black" size="16"/>
+				</textElement>
+				<text><![CDATA[DR. SAMUEL GALARZA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="567" y="50" width="130" height="30" forecolor="#253BB8" uuid="67af5a10-250c-4028-aa34-4571da1ddaad"/>
+				<textElement>
+					<font fontName="Arial Black" size="16"/>
+				</textElement>
+				<text><![CDATA[Traumatólogo]]></text>
+			</staticText>
+			<image>
+				<reportElement x="415" y="5" width="70" height="80" uuid="f8002d15-7bd9-4de5-8309-5bef20513e91"/>
+				<imageExpression><![CDATA["TraumatologiaLogo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="4" y="510" width="256" height="31" uuid="36c445da-422c-424d-9dbb-20963314715d"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dirección: Yaruquí, calles: Mejía oe2-198 y Amazonas]]></text>
+			</staticText>
+			<textField pattern="d MMMM , yyyy">
+				<reportElement x="48" y="100" width="100" height="30" uuid="e2b82d18-e7bc-4800-a3bc-f59401c2b217"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="100" width="48" height="19" uuid="e83ad154-7daa-4c0f-b2c7-89faad358e12"/>
+				<text><![CDATA[Yaruquí]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="390" y="120" width="120" height="20" uuid="29305e68-4a37-4b5a-a08f-289379b4cf73"/>
+				<textElement>
+					<font fontName="Arial Black" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[INDICACIONES]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="4" y="160" width="356" height="340" uuid="48529842-e8fc-4e12-957e-3c9abccdf5ae"/>
+				<textFieldExpression><![CDATA[$F{receta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="546" y="521" width="100" height="30" uuid="2f28217d-ba0b-4726-865c-bedd3f56d2b1"/>
+				<textFieldExpression><![CDATA[$F{proxima_consulta}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="460" y="521" width="100" height="30" uuid="e15e931e-cef2-4d15-890d-d5282c72db3f"/>
+				<text><![CDATA[NUEVA CITA EN:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="390" y="80" width="401" height="30" uuid="819f1e5d-1dcb-4fd4-a1f3-368b9f9da9e6"/>
+				<text><![CDATA[________________________________________________________________________]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="390" y="160" width="402" height="340" uuid="e036c39a-6565-48da-a636-08ec009eb271"/>
+				<textFieldExpression><![CDATA[$F{indicaciones}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+</jasperReport>
